@@ -1,13 +1,16 @@
 // Closure
 
-// const addTo = (a) => (b) => a + b
-function addTo(a) {
-  return function (b) {
-    return a + b
+function logger() {
+  let count = 0
+
+  return function (value) {
+    console.log(`Your value ${value}`)
+    count += 1
+    console.log(`counter ${count}`)
   }
 }
 
-const addToFive = addTo(5)
+const result = logger()
 
-const result = addToFive(3)
-console.log(result)
+result(5)
+result(3)
